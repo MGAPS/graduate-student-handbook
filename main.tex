@@ -1,0 +1,181 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.1.1 (14/2/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,oneside,fleqn]{book} % Default font size and left-justified equations
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+\usepackage{parskip}
+\usepackage{multirow}
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=9cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{cover}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=red!50!red,fill opacity=0,text opacity=1,inner sep=0cm]{\centering\bfseries\parbox[c][][t]{\paperwidth}{\hspace{-0.5cm}\centering \titlefont\Huge	\scalefont{2.5}\shadowtext{{\color{white}\textit{The Hitchhiker's}}}\\[1pt] % Book title
+{\hspace{-1.5cm}\titlefont\Huge\scalefont{2.5}\shadowtext{{\color{white}\textit{Guide to McGill}}}}\\ [1pt] 
+{\hspace{-9.5cm}\Huge\scalefont{2.5}\shadowtext{{\color{white}\textit{\raggedleft Physics}}}}}}; % Author name
+\node[anchor=south east, inner sep=4pt,
+        fill=black, fill opacity=0, text opacity=1,
+        rounded corners=2pt] at (\paperwidth -1cm, -27cm)
+    {\scalefont{2}\sffamily\color{yellow!50}\textit{a handbook}};
+\end{tikzpicture}};
+\end{tikzpicture}
+\endgroup
+
+\let\cleardoublepage\clearpage
+
+
+ % Table of contents heading image
+\chapterimage{contents.pdf}
+\chapterimagecaption{\textit{The Village Lawyer’s Office} (1618) by Pieter Brueghel the Elder}
+%\pagestyle{empty} % No headers
+\tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+% Chapter heading image
+\include{chapters/onboarding}
+\include{chapters/advice}
+\include{chapters/health}
+\include{chapters/financial}
+\include{chapters/TA}\label{TA}
+\include{chapters/supervisor}
+\include{chapters/special}
+
+\include{chapters/livingmtl}
+\include{chapters/intstudents}
+\include{chapters/general}
+\include{chapters/contributors}
+
+
+
+% \part{Appendix}
+
+
+% %----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\chapterimage{bib.pdf}
+\chapterimagecaption{\textit{Piles of French Novels} (1887) by Vincent van Gogh}
+\cleardoublepage
+\phantomsection
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+\printindex
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=9.3cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{Pictures/last.pdf}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=red!50!red,fill opacity=0,text opacity=1,inner xsep=1cm, inner ysep=2cm]{%
+\Huge\centering\sffamily\parbox[c][][t]{\paperwidth}{%
+\centering\scalefont{1.5}\vspace{15pt}%\\[15pt]
+\vspace{1.3cm}
+\makebox[\paperwidth][c]{{\Huge\titlefont\scalefont{1.5} \textbf{You've reached the end,}}}\\[5pt]
+\makebox[\paperwidth][c]{{\Huge\titlefont\scalefont{2} \textbf{Don't Panic.}}}\\[-25pt]
+
+
+\vspace{12.5cm}
+
+
+
+% \makebox[\paperwidth][l]{{\Large\scalefont{1} \textbf{\hspace{1cm}Contributors \hfill Editors\hspace{1cm} }}}\\[-25pt]
+% \makebox[\paperwidth][l]{{\Large\fontfamily{ppl}\selectfont \hspace{1 cm} David Abbe \hfill Guilherme Caumo \hspace{1cm} }}\\[-25pt]
+% \makebox[\paperwidth][l]{{\Large\fontfamily{ppl}\selectfont \hspace{1cm} Minh Au \hfill Varun Muralidharan \hspace{1cm} }}\\[-25pt]
+% \makebox[\paperwidth][l]{{\Large\fontfamily{ppl}\selectfont \hspace{1cm} Catherine Boisvert}\hspace{1cm}}\\[-25pt]
+% \makebox[\paperwidth][l]{{\Large\fontfamily{ppl}\selectfont \hspace{1cm} Guilherme Caumo}\hspace{1cm}}\\[-25pt]
+% \makebox[\paperwidth][l]{{\Large\fontfamily{ppl}\selectfont \hspace{1cm} Aditya Chugh}\hspace{1cm}}\\[-25pt]
+% \makebox[\paperwidth][l]{{\Large\fontfamily{ppl}\selectfont \hspace{1cm} Félix Desroches}\hspace{1cm}}\\[-25pt]
+% \makebox[\paperwidth][l]{{\Large\fontfamily{ppl}\selectfont \hspace{1cm} Daniel Jacob}}\\[-25pt]
+% \makebox[\paperwidth][l]{{\Large\fontfamily{ppl}\selectfont \hspace{1cm} Varun Muralidharan}}\\[-25pt]
+% \makebox[\paperwidth][l]{{\Large\fontfamily{ppl}\selectfont \hspace{1cm} Amelia Remnant}}
+% 
+
+\makebox[\paperwidth][c]{{\large\scalefont{1} {McGill Graduate Association of Physics Students \textcopyright ~2026}}}
+
+}}; % Author name
+\node[anchor=south west, inner sep=4pt,
+        fill=black, fill opacity=0, text opacity=1,
+        rounded corners=2pt] at (11.5cm, -1cm)
+    {\small\sffamily\color{black}\textit{Stacks of Wheat} (1890-91) series by Claude Monet};
+\end{tikzpicture}};
+\end{tikzpicture}
+\endgroup
+
+\let\cleardoublepage\clearpage
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
